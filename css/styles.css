@@ -1,0 +1,1515 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"); */
+
+
+:root {
+  --iriscolor: #4d5ae5;
+  --navyblue: #2E2F42;
+  --navcolor: #2e2f42;
+  --oceancolor: #404BBF;
+  --contactcolor: #434455;
+  --titlecolor:  #2E2F42;
+  --descriptioncolor: #434455;
+  --namecolor: #2e2f42;
+  --positioncolor: #434455;
+  --cloud: #f4f4fd;
+  --slate: #434455;
+  --white: #ffffff;
+  --cornflower: #e7e9fc;
+  --lightslate:#8E8F99;
+  --green: #31D0AA;
+  --dairy: #fcfcfc;
+}
+
+/*"body" is considered a global selector because it targets the <body> element, which is the top-level container for the content of an HTML document. The styles defined within the "body" selector will apply to the entire document unless they are overridden by more specific selectors.*/
+
+/* push ko nalang parin haha! */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* border-box fixes the computation of the height and width. Whatever height and width yung naspecify mo, yun yung susundin regardless if may padding at border doon sa specific element. Ang default kasi without the border box, hindi sinasali sa computation yung padding ang border (if you have those set in CSS). But if you have border-box set, strictly yun lang susundan ni CSS*/
+
+html {
+  box-sizing: border-box;
+}
+
+
+/* asterisks are used to represent to all elements*/
+/* :: are called pseudoclasses */
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: var(--slate);
+  background-color: var(--white);
+
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.container{
+
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100% ;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
+
+/* kailangan natin ilagay yung padding and margin para gumitna siya */
+
+ 
+/*WEBSTUDIO LOGO*/
+
+.logo-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Raleway",sans-serif;
+  line-height: 1.17;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding-top: 32px;
+  padding-bottom: 31px;
+
+  @media screen and (max-width: 768px) {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Raleway",sans-serif;
+    line-height: 1.17;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding-top: 25px;
+    padding-bottom: 17.5px;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
+.logo{
+  color: var(--iriscolor);
+}
+
+.studio{
+  color: var(--navyblue)
+}
+
+
+
+/*MENU ITEMS*/
+.nav-menu .page,
+.contacts-menu .contact {
+  @media screen and (min-width: 1200px){
+    font-weight: 500;
+    color: var(--navcolor);
+    text-decoration: none;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 31px;
+    transition: color 250ms ease-in-out;
+  }
+}
+
+.nav-menu .page{
+  @media screen and (min-width: 428px) and (max-width: 1200px){
+    font-weight: 500;
+    color: var(--navcolor);
+    text-decoration: none;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 31px;
+    transition: color 250ms ease-in-out;
+  }
+}
+
+.contacts-menu{
+
+  @media screen and (max-width: 1200px) {
+    margin-left: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+  }
+}
+
+/* format the margins of the items under nav-menu and contacts-menu except for their last items (Contacts and telephone number) */
+.nav-menu .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contacts-menu .item:not(:last-child) {
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 12px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 50px;
+  }
+}
+
+.menu,
+.navigation,
+.nav-menu,
+.contacts-menu{
+  display: flex; 
+  align-items: center;
+}
+
+.nav-menu{
+  margin-left: 93px;
+
+  @media screen and (max-width: 428px) {
+    display: none;
+  }
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+}
+
+
+.page{
+  position: relative;
+}
+
+/* Underline under the menu items */
+
+.page::after{
+  content: "";
+  border-radius: 2px;
+  height: 4px;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.page.current::after{
+  content: "";
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  background-color: var(--oceancolor);
+}
+
+.page:hover::after,
+.page:focus::after{
+  width: 100%;
+  border: 2px solid var(--oceancolor);
+  background-color: var(--oceancolor);
+}
+
+/*  */
+
+.page-header{
+  border-bottom: 1px solid var(--cornflower);
+  height: 83px;
+
+  @media screen and (max-width: 767px) {
+    height: 70px;
+  }
+}
+
+
+/* .page-header{
+  border-bottom: 1px solid var(--cornflower);
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+} */
+
+.nav-menu .page:hover,
+.nav-menu .page:focus,
+.nav-menu .page.current,
+.contacts-menu .contact:hover,
+.contacts-menu .contact:focus{
+  color: var(--iriscolor);
+}
+
+/* yung mga font, text decoration, etc nito, naka-declare na sa umpisa (.nav-menu .page, .contacts-menu .contact) */
+.contacts-menu .contact{
+  color: var(--slate);
+  font-weight: 400;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+/* HAMBURGER */
+
+.hamburger-button{
+  @media screen and (max-width: 767px) {
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    margin-left: auto;
+    top: 23px;
+    right: 16px;
+  }
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.hamburger-button-icon{
+
+}
+
+.is-open{
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HAMBURGER MENU */
+.mobile-menu-container{
+  width: 100vw;
+  height: 100vh;
+  background: var(--dairy, #FCFCFC);
+
+  /* position:absolute is used so that it is positioned relative to its closest positioned ancestor, the viewport. */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  /* this shifts the modal box 50% of it's width to the left and 50% of its height to the top. Scale(1) just means that the modal's size remains unchanged*/
+  transform: translate(-50%, -50%) scale(1);
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* HAMBURGER MENU CONTENT */
+.mobile-menu-content{
+  padding-top: 80px;
+  padding-left: 40px;
+}
+
+.nav-mobile-menu-page{
+  font-weight: 700;
+  font-size: 30px; /*36px nakasulat sa figma though*/
+  color: var(--navcolor);
+  text-decoration: none;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  display: block; 
+}
+
+.contacts-mobile-menu-item{
+  font-weight: 700;
+}
+
+.contacts-mobile-menu-item:not(:last-child){
+  font-weight: 700;
+  font-size: 30px; /*36px nakasulat sa figma though*/
+  color: var(--navcolor);
+  text-decoration: none;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  display: block;
+  padding-bottom: 30px; /*40px nakasulat sa figma though*/
+}
+
+.nav-mobile-menu-page.current,
+.nav-mobile-menu-page:focus,
+.nav-mobile-menu-page:hover,
+.contacts-mobile-menu-item:focus,
+.contacts-mobile-menu-item:hover{
+  color: var(--oceancolor);
+}
+
+/* Studio Portfolio Contacts Group*/
+.nav-mobile-menu{
+  padding-bottom: 200px; /*284px nakasulat sa figma though*/
+}
+
+.nav-mobile-menu-item:not(:last-child){
+  padding-bottom: 40px;
+}
+
+.mobile-menu-social .social-footer{
+  padding-top: 30px;
+  gap: 40px;
+}
+
+
+/*MAIN LANDING PAGE*/
+
+.hero{
+  background-color: var(--navyblue);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 188px 0;
+  text-align: center;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)
+  ), url(../images/people-office-desktop.jpg);
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ), url(../images/people-office-desktop@2x.jpg);
+  }
+
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    
+    background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ), url(../images/people-office-mobile.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+        to right,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ), url(../images/people-office-mobile@2x.jpg);
+    }
+
+    padding: 112px 0;
+  }
+
+  /* Tablet */
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ), url(../images/people-office-tablet.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+        to right,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ), url(../images/people-office-tablet@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ), url(../images/people-office-desktop.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+        to right,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ), url(../images/people-office-desktop@2x.jpg);
+    }
+  }
+
+}
+
+.hero .hero-title{
+  color: var(--white, #FFF);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: 0.04em;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 72px;
+  }
+
+}
+
+.hero .hero-title,
+.hero .button{
+  position: relative;
+  z-index: 0;
+}
+
+/*MAIN LANDING PAGE BUTTON*/
+
+.button{
+  cursor:pointer;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  border-color: transparent;
+  transition: background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+.button.primary{
+  color: white;
+  background-color: var(--iriscolor);
+  font-weight: 500;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  padding: 16px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button.primary:hover,
+.button.primary:focus {
+  background-color: var(--oceancolor);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+/* box-shadow: 0px 3px 1px rgba(red,green,blue,alpha), 
+alpha = opacity*/
+/* bakit maraming values nilagay sa box-shadow? Forda aesthetics! 3 levels of box shadow para magmukhang 3D. Subtle difference lang pero may differnce parin*/
+
+
+/*SECTION 2*/
+
+.benefits{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+
+  @media screen and (max-width: 767px){
+    display: block;
+  }
+  
+  @media screen and (max-width: 1158px) {
+  }
+}
+
+/* this is called a descendant combinator. Hinahanap ni CSS si "item" sa loob ni "benefits" */
+/* divided by 4 kasi apat yung items sa loob. yung -30px naman, kaunting adjustments nalang yun after the division */
+.benefits .item{
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 72px;
+  }
+
+  @media screen and (max-width: 1158px) {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+}
+
+.icon{
+  width: 264px;
+  height: 112px;
+  display: flex;
+  border-radius: 4px;
+  background: var(--cloud, #F4F4FD);
+  margin-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 1157px) {
+    display: none;
+  }
+
+}
+
+/* The padding is the reason why my icons wouldn't show! */
+/* .benefits-svg-icon{
+  padding: 24px 100px;
+} */
+
+/* padding: top&bottom left&right, padding: 120px 0 */
+.section{
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  
+  @media screen and (max-width: 1157px) {
+    padding: 96px 0;
+  }
+}
+
+.section.no-top-padding {
+  padding-top: 0;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 1157px) {
+    display: none;
+  }
+}
+
+.section-title{
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navyblue);
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.what-we-do{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.what-we-do .item{
+  flex-basis: calc(100%/3-30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/*SECTION 3*/
+
+
+/*SECTION 4*/
+.bg-team{
+  background-color: var(--cloud);
+  @media screen and (max-width: 767px) {
+  }
+
+}
+
+.team{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+    margin-top: 72px;
+    margin-left: 0px;
+  }
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+    justify-content: center;
+    margin-top: 72px;
+    margin-left: 0px;
+  }
+
+}
+
+
+
+.team .item{
+  flex-basis: calc(100% / 4 -30px);
+  margin-left: 30px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--white);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: 767px) {
+    margin: 0px 15px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
+    margin: 30px 15px;
+  }
+}
+
+.team .item:not(:last-child){
+  @media screen and (max-width: 767px) {
+    margin-bottom: 72px;
+  }
+}
+
+/*   border-radius: Upper left, upper right, lower left, lower right */
+
+.team .name,
+.team .position {
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team .name{
+  color: var(--navyblue);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.team .position{
+  color: var(--slate);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.team-social{
+  display: flex;
+  padding-top: 10px;
+  gap: 24px;
+  justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.team-svg{
+  width: 40px;
+  height: 40px;
+  /* flex-shrink: 0;
+  background: var(--iriscolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; */
+}
+
+.team-social .link{
+  display: flex;
+  background-color: var(--iriscolor);
+  color: var(--cloud);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 250ms ease-in-out;
+}
+
+.team-social .link:hover,
+.team-social .link:focus{
+  background-color: var(--oceancolor);
+}
+
+.team-social .team-social-icon{
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+.social-footer .team-social-icon{
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+/* CUSTOMERS */
+
+.customers-icon{
+  fill: currentColor;
+}
+
+.partners{
+  /* mobile */
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 72px;
+    gap: 24px;
+  }
+
+  /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 72px;
+  }
+
+  /* desktop */
+  @media screen and (min-width: 1158px){
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+
+.partners .item{
+  width: 168px;
+  height: 88px;
+} 
+
+.partners .item:not(:last-child){
+  @media screen and (max-width: 767px) {
+    margin-bottom: 72px;
+  }
+}
+
+/* Instead of making the box for .partners .item, do it for .partners .link */
+.partners .link{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--lightslate);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  color: var(--lightslate);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partners .link:focus,
+.partners .link:hover{
+  color: var(--oceancolor);
+  border-color: var(--oceancolor);
+}
+
+/*FOOTER*/
+
+.page-footer{
+  background-color: var(--navyblue);
+  padding: 60px 0 60px 60px;
+
+  @media screen and (max-width: 767px) {
+    padding: 96px 0;
+    justify-content: flex-start;
+    margin: auto;
+  }
+}
+
+.page-footer .studio-footer{
+  color: var(--cloud);
+}
+
+.footer-description{
+  color: var(--cloud);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 17px;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+  }
+}
+
+
+.footer-block{
+  margin-top: 12px;
+  margin-left: 123px;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 72px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+    margin-left: 0px;
+  }
+  
+}
+
+.footer-heading{
+  color: var(--cloud);
+  font-size: 16px;
+  font-weight: 500;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.social-footer{
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.icon-item{
+    width: 40px;
+    height: 40px;
+  }
+
+.social-footer .link{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--iriscolor);
+  color: var(--cloud);
+  transition: background-color 250ms ease-in-out;
+}
+
+.social-footer .link:hover,
+.social-footer .link:focus{
+  background-color: var(--green);
+}
+
+.footer{
+  display: flex;
+  /* gap: 120px; */
+  flex-wrap: wrap;
+  margin-top: -12px;
+  margin-left: -50px;
+  align-items: baseline;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+    margin-left: 45px;
+    gap: 40px;
+  }
+}
+
+.footer-address{
+  margin-top: 12px;
+  margin-left: 25px;
+  
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 72px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+    margin-left: 0px;
+  }
+  
+
+}
+
+.benefits .title{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navyblue);
+  line-height: 1.14;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.14;
+    margin-bottom: 10px;
+    color: var(--navyblue);
+  }
+
+  @media screen and (max-width: 1157px) {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.14;
+    margin-bottom: 10px;
+    color: var(--navyblue);
+  }
+}
+
+.benefits-br{
+  @media screen and (max-width: 767px){
+    display: none;
+  }
+
+  @media screen and (max-width: 1158px) {
+    display: none;
+  }
+}
+
+.benefits .description{
+  color: var(--slate);
+  line-height: 1.71;
+  font-size: 16px;
+  font-weight: 400;
+
+  @media screen and (max-width: 767px) {
+    font-weight: 500;
+  }
+}
+
+
+/* Subscribe Button */
+.footer-subscribe{
+  display: flex;
+  margin-top: 16px;
+}
+
+.subscribe-field{
+  margin-left: 80px;
+  
+  @media screen and (max-width: 767px) {
+    margin: auto;
+    /* justify-content: center; */
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  
+}
+
+.subscribe-block{
+  display: flex;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.footer-subscribe .footer-form-input{
+  background-color: transparent;
+  color: var(--cloud);
+  border: 1px solid var(--white);
+  padding: 8px 16px;
+  width: 264px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+.footer-subscribe .footer-form-input::placeholder{
+  color: var(--white);
+}
+
+.footer-form-input:hover,
+.footer-form-input:focus,
+.footer-form-text-area:hover,
+.footer-form-text-area:focus{
+  outline: none;
+}
+
+
+.button.subscribe{
+  color: white;
+  background-color: var(--iriscolor);
+  font-weight: 500;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  width: 165px;
+  height: 40px;
+  display: flex;
+  margin-left: 24px;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.button.subscribe:hover,
+.button.subscribe:focus{
+  background-color: var(--oceancolor);
+}
+
+.subscribe-icon{
+  margin-left: 0px;
+}
+
+.subscribe-button{
+  margin-top: 100px;
+}
+
+
+
+/* PORFOLIO */
+
+/**/
+.button.filter{
+  background-color: var(--cloud);
+  color: var(--iriscolor);
+  font-weight: 500;
+  line-height: 1.62;
+  padding: 12px 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.filter:hover,
+.button.filter:focus,
+.button.filter.current{
+  background-color: var(--oceancolor);
+  color: var(--cloud);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+}
+
+.filters{
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+
+
+
+.section .filters{
+  @media screen and (max-width: 1157px) {
+    margin-top: -48px;
+  }
+}
+
+.filters .space + .space {
+  margin-left: 8px;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0px;
+  }
+}
+
+.filters .space{
+  @media screen and (max-width: 1157px) {
+    margin-right: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+
+
+/* tatarget natin si "space" sa loob ng "filters" except sa pinaka-unang "space".
+.filters .space + .space; ang tawag sa "+" in this context is an adjacent combinator. Ang ginagawa niya is hahanapin niya yung filters, and sa loob ng filters merong class="space". 
+The adjacent sibling selector is used to select an element that is directly after another specific element. Sibling elements must have the same parent element, and "adjacent" means "immediately following".*/
+
+/*PORTFOLIO BUTTONS*/
+
+.substrate{
+  border: 1px solid var(--cornflower, #E7E9FC);
+  border-top: 0;
+  padding: 20px 24px;
+  background-color: var(--white);
+}
+
+.projects{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: -40px;
+  }
+}
+
+.project-card{
+  flex-basis: calc(100% /3 - 30px);
+  /* flex-basis: calc((100% / 3 ) - 30px) */
+  margin-left: 30px;
+  margin-top: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    flex-basis: calc(100% - 30px);
+    margin-left: 30px;
+    margin-top: 48px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media screen and (max-width: 1157px) {
+    flex-basis: calc(100% /2 - 30px);
+    margin-left: 30px;
+    margin-top: 48px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+
+}
+
+.project-card:hover{
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.project .name{
+  color: var(--navyblue);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.projects .type{
+  color: var(--slate);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.87;
+}
+
+.project-overlay-text{
+  background-color: var(--iriscolor);
+  position: absolute;
+  top: 0;
+  padding: 40px 32px;
+  height: 100%;
+  width: 100%;
+  color: var(--cloud);
+  letter-spacing: .32px;
+}
+
+
+
+/* I add this so that the blue box does not cover the whole screen */
+.project-thumbnail{
+  position: relative;
+  overflow: hidden;
+}
+
+/* I add this to move the blue box to the bottom of the thumbnail. Since I am using overflow:hidden to the thumbnail, this project-overlay-text will also be hidden (kinda). It's still there, but we need to find a way to make it move upwards when we hovwe on the thumbnail*/
+.project-overlay-text{
+  transform: translateY(101%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover on the thumbnail so the project-overlay-text appears */
+.project-thumbnail:hover .project-overlay-text{
+  transform: translateY(0%)
+}
+
+/* MODAL */
+
+/* gray-ish background when modal is open */
+.backdrop{
+  position: fixed;
+  background: rgba(46, 47, 66, 0.40);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal{
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background: var(--dairy, #FCFCFC);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+
+  /* position:absolute is used so that it is positioned relative to its closest positioned ancestor, the viewport. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  /* this shifts the modal box 50% of it's width to the left and 50% of its height to the top. Scale(1) just means that the modal's size remains unchanged*/
+  transform: translate(-50%, -50%) scale(1);
+  }
+
+/* .is-hidden hides the modal and backdrop */
+/* This part works because of Javascript. When the "Open Modal" button is clicked, the toggleModal function removes the "is-hidden" class from the modal element, making the modal visible and interactive. When the "Close Modal" button is clicked, the same function toggles the "is-hidden" class back, making the modal hidden and non-interactive. This creates the behavior of opening and closing the modal. */
+.is-hidden{
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* these 2 codes will make the modal from 0 scale to 1 scale in 250ms. They can't survive without the other. */
+.modal{
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* This is the close button */
+.modal-close{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+
+  /* para gumitna yung X */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--cornflower);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--oceancolor);
+  color: var(--white);
+}
+
+
+/* Modal Form */
+
+.form-field{
+  display: block;
+  position: relative;
+}
+
+.form-label{
+  position: absolute;
+  top: -12px;
+  font-size: 12px;
+  line-height: 0.87px;
+  letter-spacing: 0.48px;
+  color: var(--lightslate);
+}
+
+.form-text-area::placeholder{
+  position: absolute;
+  top: 12px;
+  font-size: 12px;
+  line-height: 0.87px;
+  letter-spacing: 0.48px;
+  color: var(--navyblue-modal, rgba(46, 47, 66, 0.40));
+}
+
+/* margin: top right bottom left */
+.form-input,
+.form-text-area{
+  width: 100%;
+  margin: 0 0 29px 0;
+  padding-left: 40px;
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.40));
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+}
+
+.form-text-area{
+  margin-bottom: 16px;
+}
+
+.form-input{
+  height: 40px
+}
+
+.modal{
+  padding: 60px 24px 24px 24px;
+}
+
+.modal-title{
+  color: var(--navyblue);
+  font-weight: 500;
+  line-height: 24px;
+
+  letter-spacing: 0.24px;
+  display: flex;
+  justify-content: center;
+
+  padding-bottom: 30px;
+}
+
+
+.form-input:hover,
+.form-input:focus,
+.form-text-area:hover,
+.form-text-area:focus{
+  outline: none;
+  border: 1px solid var(--iris, #4D5AE5);
+}
+
+.form-icon{
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 16px;
+  fill: var(--navyblue);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:hover .form-icon,
+.form-field:focus .form-icon{
+  fill: var(--iriscolor);
+}
+
+
+/* continue Lesson 11 Elements of Form lecture 1:25:00 */
+
+.form-text-area{
+  padding-left: 16px;
+  padding-top: 8px;
+  resize: none;
+  height: 120px;
+}
+
+
+.form-agreement{
+  display: flex;
+  font-size: 12px;
+  line-height: 0.87px;
+  letter-spacing: 0.48px;
+  color: var(--lightslate);
+}
+
+.form-agreement .terms{
+  padding-top: 7px;
+  padding-left: 8px;
+}
+
+
+.form-checkbox-icon{
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0, 0, 128, 0.4);
+  border-radius: 2px; 
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Target the checked state */
+.form-checkbox:checked + .form-checkbox-icon {
+  border-color: var(--oceancolor); /* Change border color */
+  background-color: var(--oceancolor);
+  fill: var(--cloud);
+}
+
+.form-checkbox{
+  width: 16px;
+  height: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.button.send{
+  color: white;
+  background-color: var(--iriscolor);
+  font-weight: 500;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  padding: 16px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  width: 169px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.modal-send{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HW7 notes: Pag sa small devices, use flex-wrap: wrap . Pag sa desktop, flex-wrap: no-wrap*/
+
+
