@@ -78,14 +78,14 @@ img{
 .container{
 
   @media screen and (max-width: 767px) {
-    padding: 0 15px;
+    padding: 0 16x;
     margin: 0 auto;
     width: 100% ;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px){
     width: 768px;
-    padding: 0px;
+    padding: 0 16px;
     margin: auto;
   }
 
@@ -111,7 +111,7 @@ img{
   padding-top: 32px;
   padding-bottom: 31px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     text-decoration: none;
     font-size: 18px;
     font-family: "Raleway",sans-serif;
@@ -124,6 +124,11 @@ img{
     display: flex;
     justify-content: center;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+
+  }
+
 }
 
 
@@ -141,7 +146,7 @@ img{
 /*MENU ITEMS*/
 .nav-menu .page,
 .contacts-menu .contact {
-  @media screen and (min-width: 1200px){
+  @media screen and (min-width: 1158px){
     font-weight: 500;
     color: var(--navcolor);
     text-decoration: none;
@@ -153,9 +158,8 @@ img{
     transition: color 250ms ease-in-out;
   }
 }
-
 .nav-menu .page{
-  @media screen and (min-width: 428px) and (max-width: 1200px){
+  @media screen and (min-width: 428px) and (max-width: 1158px){
     font-weight: 500;
     color: var(--navcolor);
     text-decoration: none;
@@ -170,13 +174,13 @@ img{
 
 .contacts-menu{
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px){
     margin-left: 120px;
     display: flex;
     flex-direction: column;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1158px) {
     margin-left: auto;
   }
 }
@@ -187,10 +191,10 @@ img{
 }
 
 .contacts-menu .item:not(:last-child) {
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     padding-bottom: 12px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1158px) {
     margin-right: 50px;
   }
 }
@@ -209,7 +213,7 @@ img{
   @media screen and (max-width: 428px) {
     display: none;
   }
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 767px){
     display: none;
   }
 }
@@ -323,11 +327,15 @@ img{
 
   /* position:absolute is used so that it is positioned relative to its closest positioned ancestor, the viewport. */
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   
   /* this shifts the modal box 50% of it's width to the left and 50% of its height to the top. Scale(1) just means that the modal's size remains unchanged*/
-  transform: translate(-50%, -50%) scale(1);
+  transform: translateY(0);
+  padding: 80px 0 40px 40px;
+
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -336,13 +344,15 @@ img{
 
 /* HAMBURGER MENU CONTENT */
 .mobile-menu-content{
-  padding-top: 80px;
-  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .nav-mobile-menu-page{
   font-weight: 700;
-  font-size: 30px; /*36px nakasulat sa figma though*/
+  font-size: 36px; /*36px nakasulat sa figma though*/
   color: var(--navcolor);
   text-decoration: none;
   line-height: 1.14;
@@ -356,14 +366,20 @@ img{
 
 .contacts-mobile-menu-item:not(:last-child){
   font-weight: 700;
-  font-size: 30px; /*36px nakasulat sa figma though*/
-  color: var(--navcolor);
+  font-size: 36px; /*36px nakasulat sa figma though*/
+  color: var(--iriscolor);
   text-decoration: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
   display: block;
   padding-bottom: 30px; /*40px nakasulat sa figma though*/
 }
+
+.contacts-mobile-menu-item:last-child{
+  font-size: 20px;
+  font-weight: 500;
+}
+
 
 .nav-mobile-menu-page.current,
 .nav-mobile-menu-page:focus,
@@ -374,18 +390,12 @@ img{
 }
 
 /* Studio Portfolio Contacts Group*/
-.nav-mobile-menu{
-  padding-bottom: 200px; /*284px nakasulat sa figma though*/
-}
 
 .nav-mobile-menu-item:not(:last-child){
   padding-bottom: 40px;
 }
 
-.mobile-menu-social .social-footer{
-  padding-top: 30px;
-  gap: 40px;
-}
+
 
 
 /*MAIN LANDING PAGE*/
@@ -456,7 +466,7 @@ img{
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1158px) {
     background-image: linear-gradient(
       to right,
       rgba(46, 47, 66, 0.7),
@@ -535,14 +545,23 @@ alpha = opacity*/
 .benefits{
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  /* margin-left: -30px;
+  margin-top: -30px; */
 
   @media screen and (max-width: 767px){
     display: block;
+    margin: 0;
   }
-  
-  @media screen and (max-width: 1158px) {
+
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
+    gap: 72px 24px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
   }
 }
 
@@ -559,10 +578,10 @@ alpha = opacity*/
 
   @media screen and (max-width: 1158px) {
     flex-basis: calc(100% / 2 - 30px);
-    margin-left: 30px;
-    margin-top: 30px;
+    /* margin-left: 30px;
+    margin-top: 30px; */
+    margin: 0;
   }
-
 }
 
 .icon{
@@ -579,7 +598,7 @@ alpha = opacity*/
     display: none;
   }
 
-  @media screen and (max-width: 1157px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     display: none;
   }
 
@@ -608,7 +627,7 @@ alpha = opacity*/
     display: none;
   }
 
-  @media screen and (max-width: 1157px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     display: none;
   }
 }
@@ -658,7 +677,7 @@ alpha = opacity*/
     margin-left: 0px;
   }
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     justify-content: center;
     margin-top: 72px;
     margin-left: 0px;
@@ -787,8 +806,7 @@ alpha = opacity*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 72px;
+    gap: 72px 24px;
   }
 
   /* desktop */
@@ -860,6 +878,11 @@ alpha = opacity*/
     justify-content: center;
     padding-top: 0px;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+
+  }
+  
 }
 
 
@@ -874,9 +897,8 @@ alpha = opacity*/
   }
 
   @media screen and (min-width: 768px) and (max-width: 1157px){
-    margin-left: 0px;
+    margin-left: -16px
   }
-  
 }
 
 .footer-heading{
@@ -890,15 +912,30 @@ alpha = opacity*/
   }
 }
 
-.social-footer{
+
+
+
+.footer-block .social-footer{
   display: flex;
   gap: 16px;
   padding-top: 16px;
-  justify-content: flex-start;
+  justify-content: center;
 
+  @media screen and (min-width: 768px) and (max-width: 1157px){
+    display: flex;
+    gap: 16px;
+    padding-top: 18px;
+    justify-content: center;
+  }
+  
+}
+
+.mobile-menu-social .social-footer{
   @media screen and (max-width: 767px) {
     display: flex;
-    justify-content: center;
+    padding-top: 30px;
+    gap: 56px;
+    justify-content: flex-start;
   }
 }
 
@@ -976,7 +1013,7 @@ alpha = opacity*/
     color: var(--navyblue);
   }
 
-  @media screen and (max-width: 1157px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     font-size: 36px;
     font-weight: 700;
     line-height: 1.14;
@@ -990,7 +1027,7 @@ alpha = opacity*/
     display: none;
   }
 
-  @media screen and (max-width: 1158px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     display: none;
   }
 }
@@ -999,11 +1036,7 @@ alpha = opacity*/
   color: var(--slate);
   line-height: 1.71;
   font-size: 16px;
-  font-weight: 400;
-
-  @media screen and (max-width: 767px) {
-    font-weight: 500;
-  }
+  font-weight: 500;
 }
 
 
@@ -1200,7 +1233,7 @@ The adjacent sibling selector is used to select an element that is directly afte
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media screen and (max-width: 1157px) {
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
     flex-basis: calc(100% /2 - 30px);
     margin-left: 30px;
     margin-top: 48px;
@@ -1287,7 +1320,12 @@ The adjacent sibling selector is used to select an element that is directly afte
   
   /* this shifts the modal box 50% of it's width to the left and 50% of its height to the top. Scale(1) just means that the modal's size remains unchanged*/
   transform: translate(-50%, -50%) scale(1);
+
+  @media screen and (min-width: 320px) and (max-width: 407px) {
+    width: 100%
   }
+}
+
 
 /* .is-hidden hides the modal and backdrop */
 /* This part works because of Javascript. When the "Open Modal" button is clicked, the toggleModal function removes the "is-hidden" class from the modal element, making the modal visible and interactive. When the "Close Modal" button is clicked, the same function toggles the "is-hidden" class back, making the modal hidden and non-interactive. This creates the behavior of opening and closing the modal. */

@@ -281,12 +281,13 @@
           </div>
 
           <!-- Subscribe Field -->
-          <div class="subscribe-field">
+          <!-- we use a form container so that we can validate the fields, yung required attribute. Pag div container hindi yun possible -->
+          <form class="subscribe-field">
             <b class="footer-heading"> Subscribe </b>
 
             <div class="subscribe-block">
               <label class="footer-subscribe">
-                <input class="footer-form-input" type="email" name="user-email" placeholder="E-mail">
+                <input required class="footer-form-input" type="email" name="user-email" placeholder="E-mail">
               </label>
 
               <button type="submit" class="button subscribe">
@@ -296,7 +297,7 @@
                 </svg>
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </footer>
