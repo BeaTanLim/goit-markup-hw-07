@@ -78,7 +78,7 @@ img{
 .container{
 
   @media screen and (max-width: 767px) {
-    padding: 0 16x;
+    padding: 0 16px;
     margin: 0 auto;
     width: 100% ;
   }
@@ -265,13 +265,6 @@ img{
   }
 }
 
-
-/* .page-header{
-  border-bottom: 1px solid var(--cornflower);
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-} */
 
 .nav-menu .page:hover,
 .nav-menu .page:focus,
