@@ -295,6 +295,7 @@ img{
     margin-left: auto;
     top: 23px;
     right: 16px;
+    z-index: 0;
   }
 
   @media screen and (min-width: 769px) {
@@ -1313,7 +1314,7 @@ The adjacent sibling selector is used to select an element that is directly afte
   
   /* this shifts the modal box 50% of it's width to the left and 50% of its height to the top. Scale(1) just means that the modal's size remains unchanged*/
   transform: translate(-50%, -50%) scale(1);
-
+  
   @media screen and (min-width: 320px) and (max-width: 407px) {
     width: 100%
   }
