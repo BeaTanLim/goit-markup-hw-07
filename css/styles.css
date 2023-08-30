@@ -84,7 +84,7 @@ img{
   }
 
   @media screen and (min-width: 768px) and (max-width: 1157px){
-    width: 768px;
+    width: 100%;
     padding: 0 16px;
     margin: auto;
   }
@@ -174,8 +174,9 @@ img{
 
 .contacts-menu{
 
+  
   @media screen and (min-width: 768px) and (max-width: 1157px){
-    margin-left: 120px;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
   }
@@ -492,6 +493,7 @@ img{
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 72px;
+    line-height: 56px;
   }
 
 }
@@ -522,6 +524,16 @@ img{
   letter-spacing: 0.06em;
   padding: 16px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  @media screen and (max-width: 768px) and (max-width: 1157px){
+    color: white;
+    background-color: var(--iriscolor);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    padding: 16px 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .button.primary:hover,
@@ -543,8 +555,11 @@ alpha = opacity*/
   margin-top: -30px; */
 
   @media screen and (max-width: 767px){
-    display: block;
-    margin: 0;
+    /* display: block;
+    margin: 0; */
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1157px) {
@@ -595,7 +610,6 @@ alpha = opacity*/
   @media screen and (min-width: 768px) and (max-width: 1157px) {
     display: none;
   }
-
 }
 
 /* The padding is the reason why my icons wouldn't show! */
@@ -675,33 +689,48 @@ alpha = opacity*/
     justify-content: center;
     margin-top: 72px;
     margin-left: 0px;
+    gap: 64px 24px;
   }
-
 }
 
+.team{
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    gap: 72px 30px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1157px) {
+    display: flex;
+    justify-content: center;
+    gap: 64px 24px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    justify-content: center;
+    gap: 0 30px;
+  }
+}
 
 
 .team .item{
   flex-basis: calc(100% / 4 -30px);
-  margin-left: 30px;
-  margin-top: 30px;
+  /* margin-left: 30px;
+  margin-top: 30px; */
   padding-bottom: 30px;
   background-color: var(--white);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 
   @media screen and (max-width: 767px) {
-    margin: 0px 15px;
+    /* margin: 0px 15px; */
+    margin: 0px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1157px) {
-    margin: 30px 15px;
-  }
-}
-
-.team .item:not(:last-child){
-  @media screen and (max-width: 767px) {
-    margin-bottom: 72px;
+    /* margin: 30px 15px; */
+    margin: 0px;
   }
 }
 
@@ -787,12 +816,12 @@ alpha = opacity*/
 
 .partners{
   /* mobile */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 72px;
-    gap: 24px;
+    gap: 72px 16px;
   }
 
   /* tablet */
@@ -819,9 +848,10 @@ alpha = opacity*/
 
 .partners .item:not(:last-child){
   @media screen and (max-width: 767px) {
-    margin-bottom: 72px;
   }
 }
+
+
 
 /* Instead of making the box for .partners .item, do it for .partners .link */
 .partners .link{
